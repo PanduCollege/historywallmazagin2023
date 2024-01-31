@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>History</title>
+        <link rel="stylesheet" href="book.css">
+    </head>
+    <body>
+        
+        <div class="slider">
+            <div class="item">
+                <h1>Welcome!</h1>
+                <h3><br><br>Wall Magazinem <br>of <br>History</h3>
+                <br><h3>For session 2023-24</h3>
+            </div>
+            
+            <div class="item">
+                <h1>HISTORIA</h1>
+                <img src="img/1.jpg"></img>
+            </div>
+            <div class="item">
+                <h1>ABOUT</h1>
+                The students of BA Second and Fourth Semester honors students of the Department of History prepared a departmental wall magazine titled Historia for the academic session 2022-23. The theme for the wall magazine was the Bhakti Movement. Historia was edited by Anushka Dey, a student of BA fourth semester and all the students of BA second and fourth semester honors were members. The wall magazine 
+            </div>
+            <div class="item">
+                had eight different articles on the theme and it had beautiful artworks by the students on different aspects of the Bhakti Movement. Historia can be considered as a platform for the students to showcase their artistic and literary talent. In the inter- departmental wall magazine competition organized by the IQAC, Pandu College, Historia won the third prize.
+            </div>
+            <div class="item">
+                <h1>Write Ups</h1>
+                <div class="p">
+                    Topic- Bhakti movement<br><br>
+Introduction, main principles- Neha Kumari<br>
+<br>
+Bhakti tradition - Anushka Dey<br><br>
+
+Leaders of the movement - Tasneem Gufrana<br><br>
+
+Effects of the Bhakti movement - Prativa Jha <br><br>
+
+Sankardev - Anushka Dey<br><br>
+
+Shaiva Dharma - Bhupali Das<br><br>
+
+Decorations, drawings and illustrations:<br>
+Junmoni Das<br>
+Bhupali Das<br>
+Ankita Ray<br>
+Sarita Chetry <br>
+Anushree Bardhan</div>
+            </div>
+            <button id="next">></button>
+            <button id="prev"><</button>
+        </div>
+    
+        <script src="book.js"></script>
+        <script>
+            let touchStartX = 0;
+            let touchEndX = 0;
+    
+            document.querySelector('.slider').addEventListener("touchstart", function (event) {
+                touchStartX = event.touches[0].clientX;
+            });
+    
+            document.querySelector('.slider').addEventListener("touchmove", function (event) {
+                touchEndX = event.touches[0].clientX;
+            });
+    
+            document.querySelector('.slider').addEventListener("touchend", function () {
+                handleSwipe();
+                touchStartX = 0;
+                touchEndX = 0;
+            });
+    
+            function handleSwipe() {
+                const swipeThreshold = 50;
+    
+                if (touchEndX - touchStartX > swipeThreshold) {
+                    // Swipe right
+                    document.getElementById('prev').click();
+                } else if (touchStartX - touchEndX > swipeThreshold) {
+                    // Swipe left
+                    document.getElementById('next').click();
+                }
+            }
+        </script>
+    </body>
+    </html>
