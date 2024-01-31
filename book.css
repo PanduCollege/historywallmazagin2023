@@ -59,7 +59,7 @@ img{
 @media (max-width: 450px) {
     body{
     padding-top: 35%;
-    min-height: 77vh;
+    min-height: 80vh;
     margin: 0;
     display: flow-root;
     justify-content: center;
